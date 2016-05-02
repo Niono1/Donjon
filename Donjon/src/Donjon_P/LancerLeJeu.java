@@ -9,8 +9,8 @@ public class LancerLeJeu {
 		String déplacement = " ";
 		int degats = 0,degats2 = 0;
 //		Personnage niono = new Personnage();
-		Personnage arhimeas = new Personnage(100,10);
-		Personnage niono = new Personnage(100,10);
+		Heros arhimeas = new Heros(100,10);
+		Heros niono = new Heros(100,10);
 		do
 		{
 		degats = Actions.taper(arhimeas.pDegats);
