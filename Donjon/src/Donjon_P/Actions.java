@@ -15,38 +15,47 @@ public class Actions {
 		switch (str)
 		{
 		case "avant":
+			if (a==6)
+			{
+				System.out.println("Vous avez atteint le bord du donjon !");
+			}
+			else
+			{
 			System.out.println("En avant toute !");
 			test = Salles_du_donjon.SalleOk(a+1,b);
-			if (test == 1)
-			{
-				System.out.println("Cool une nouvelle salle");
+			if (test > 0)
 				resultat = 1;
 			}
-			else
-				System.out.println("Oh non une impasse !");
 			break;
+
 		case "droite":
+			if (b==2)
+			{
+				System.out.println("Vous avez atteint le bord du donjon !");
+			}
+			else
+			{
 			System.out.println("A droite !");
 			test = Salles_du_donjon.SalleOk(a,b+1);
-			if (test == 1)
-			{
-				System.out.println("Cool une nouvelle salle");
+			if (test > 0)
 				resultat = 2;
 			}
-			else
-				System.out.println("Oh non une impasse !");
 			break;
+
 		case "gauche":
-			System.out.println("A gauche !");
-			test = Salles_du_donjon.SalleOk(a+1,b-1);
-			if (test == 1)
+			if (b==0)
 			{
-				System.out.println("Cool une nouvelle salle");
-				resultat = 3;
+				System.out.println("Vous avez atteint le bord du donjon !");
 			}
 			else
-				System.out.println("Oh non une impasse !");
+			{
+			System.out.println("A gauche !");
+			test = Salles_du_donjon.SalleOk(a,b-1);
+			if (test > 0)
+				resultat = 3;
+			}
 			break;
+
 		default:
 			System.out.println("Veuillez répéter, je ne comprends pas : "+str);
 			reponse = sc.nextLine();
@@ -56,20 +65,24 @@ public class Actions {
 		return resultat;
 	}
 
+
+
+
+
 	public static int taper(int degats) {
 		// Initialisation
 		int nb = 0;
 
 		// Programme
-		nb = 10 + (int)(Math.random() * 20);
+		nb = degats + (int)(Math.random() * 20);
 		System.out.println(nb);
 
 		if (nb >= 27)
 		{
-		System.out.println("Vous avez effectué un coup critique");
-		nb = nb*2;
+			System.out.println("Vous avez effectué un coup critique");
+			nb = nb*2;
 		}
-		
+
 		return nb;
 	}
 }

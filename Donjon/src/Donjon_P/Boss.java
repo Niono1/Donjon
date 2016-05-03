@@ -13,7 +13,7 @@ public class Boss extends Personnage {
 	{
 		this.pVie = pVie;
 		this.pDegats = pDegats;
-		System.out.println("Je suis un personnage possédant "+pVie+" Points de Vie"
+		System.out.println("Je suis un boss possédant "+pVie+" Points de Vie"
 				+ " et "+pDegats+" Points de Degats");
 	}
 }
